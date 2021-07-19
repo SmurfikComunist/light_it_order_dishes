@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>dish</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'dish_DishIngridients_list' %}">DishIngridients Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'dish_Ingredient_list' %}">Ingredient Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'dish_Dish_list' %}">Dish Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'dish_Order_list' %}">Order Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'dish_OrderIngridients_list' %}">OrderIngridients Listing</a></div>
+{% endblock %}
