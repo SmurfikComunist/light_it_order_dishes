@@ -2,14 +2,6 @@ from django import forms
 from . import models
 
 
-class DishIngridientsForm(forms.ModelForm):
-    class Meta:
-        model = models.DishIngridients
-        fields = [
-            "ingredients_amount",
-            "dish",
-            "ingredient",
-        ]
 
 
 class IngredientForm(forms.ModelForm):
@@ -38,11 +30,3 @@ class OrderForm(forms.ModelForm):
         ]
 
 
-class OrderIngridientsForm(forms.ModelForm):
-    class Meta:
-        model = models.OrderIngridients
-        fields = [
-            "ingredients_amount",
-            "order",
-            "ingridient",
-        ]
