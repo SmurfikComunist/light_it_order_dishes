@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.urls import reverse
 
@@ -9,7 +10,10 @@ class DishIngredients(models.Model):
     ingredient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
 
     # Fields
-    ingredients_amount = models.PositiveIntegerField(default=1)
+    ingredients_amount = models.PositiveIntegerField(
+        default=1,
+        validators=[MinValueValidator(1)]
+    )
 
     class Meta:
         pass
@@ -97,7 +101,10 @@ class OrderIngredients(models.Model):
     ingridient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
 
     # Fields
-    ingredients_amount = models.PositiveIntegerField()
+    ingredients_amount = models.PositiveIntegerField(
+        default=1,
+        validators=[MinValueValidator(1)]
+    )
 
     class Meta:
         pass
