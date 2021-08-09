@@ -40,10 +40,10 @@ class Ingredient(models.Model):
         return str(self.name)
 
     def get_absolute_url(self):
-        return reverse("dish_Ingredient_detail", args=(self.pk,))
+        return reverse("ingredient_detail", args=(self.pk,))
 
     def get_update_url(self):
-        return reverse("dish_Ingredient_update", args=(self.pk,))
+        return reverse("ingredient_update", args=(self.pk,))
 
 
 class Dish(models.Model):
@@ -63,10 +63,10 @@ class Dish(models.Model):
         return str(self.name)
 
     def get_absolute_url(self):
-        return reverse("dish_Dish_detail", args=(self.pk,))
+        return reverse("dish_detail", args=(self.pk,))
 
     def get_update_url(self):
-        return reverse("dish_Dish_update", args=(self.pk,))
+        return reverse("dish_update", args=(self.pk,))
 
 
 class Order(models.Model):
@@ -86,10 +86,10 @@ class Order(models.Model):
         return str(self.pk)
 
     def get_absolute_url(self):
-        return reverse("dish_Order_detail", args=(self.pk,))
+        return reverse("order_detail", args=(self.pk,))
 
     def get_update_url(self):
-        return reverse("dish_Order_update", args=(self.pk,))
+        return reverse("order_update", args=(self.pk,))
 
 
 class OrderIngredients(models.Model):
