@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
-class DishIngridients(models.Model):
+class DishIngredients(models.Model):
 
     # Relationships
     dish = models.ForeignKey("dish.Dish", on_delete=models.CASCADE)
@@ -18,10 +18,10 @@ class DishIngridients(models.Model):
         return str(self.pk)
 
     def get_absolute_url(self):
-        return reverse("dish_DishIngridients_detail", args=(self.pk,))
+        return reverse("dish_DishIngredients_detail", args=(self.pk,))
 
     def get_update_url(self):
-        return reverse("dish_DishIngridients_update", args=(self.pk,))
+        return reverse("dish_DishIngredients_update", args=(self.pk,))
 
 
 class Ingredient(models.Model):
@@ -47,7 +47,7 @@ class Ingredient(models.Model):
 class Dish(models.Model):
 
     # Relationships
-    ingridients = models.ManyToManyField("dish.Ingredient", through='DishIngridients')
+    ingredients = models.ManyToManyField("dish.Ingredient", through='DishIngredients')
 
     # Fields
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -71,7 +71,7 @@ class Order(models.Model):
 
     # Relationships
     dish = models.ForeignKey("dish.Dish", on_delete=models.CASCADE)
-    ingredients = models.ManyToManyField("dish.Ingredient", through='OrderIngridients')
+    ingredients = models.ManyToManyField("dish.Ingredient", through='OrderIngredients')
 
     # Fields
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -90,7 +90,7 @@ class Order(models.Model):
         return reverse("dish_Order_update", args=(self.pk,))
 
 
-class OrderIngridients(models.Model):
+class OrderIngredients(models.Model):
 
     # Relationships
     order = models.ForeignKey("dish.Order", on_delete=models.CASCADE)
@@ -106,7 +106,7 @@ class OrderIngridients(models.Model):
         return str(self.pk)
 
     def get_absolute_url(self):
-        return reverse("dish_OrderIngridients_detail", args=(self.pk,))
+        return reverse("dish_OrderIngredients_detail", args=(self.pk,))
 
     def get_update_url(self):
-        return reverse("dish_OrderIngridients_update", args=(self.pk,))
+        return reverse("dish_OrderIngredients_update", args=(self.pk,))
