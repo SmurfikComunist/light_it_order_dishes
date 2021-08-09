@@ -3,25 +3,7 @@ from . import models
 from . import forms
 
 
-class DishIngridientsListView(generic.ListView):
-    model = models.DishIngridients
-    form_class = forms.DishIngridientsForm
 
-
-class DishIngridientsCreateView(generic.CreateView):
-    model = models.DishIngridients
-    form_class = forms.DishIngridientsForm
-
-
-class DishIngridientsDetailView(generic.DetailView):
-    model = models.DishIngridients
-    form_class = forms.DishIngridientsForm
-
-
-class DishIngridientsUpdateView(generic.UpdateView):
-    model = models.DishIngridients
-    form_class = forms.DishIngridientsForm
-    pk_url_kwarg = "pk"
 
 
 class IngredientListView(generic.ListView):
@@ -87,22 +69,9 @@ class OrderUpdateView(generic.UpdateView):
     pk_url_kwarg = "pk"
 
 
-class OrderIngridientsListView(generic.ListView):
-    model = models.OrderIngridients
-    form_class = forms.OrderIngridientsForm
 
 
-class OrderIngridientsCreateView(generic.CreateView):
-    model = models.OrderIngridients
-    form_class = forms.OrderIngridientsForm
 
 
-class OrderIngridientsDetailView(generic.DetailView):
-    model = models.OrderIngridients
-    form_class = forms.OrderIngridientsForm
 
 
-class OrderIngridientsUpdateView(generic.UpdateView):
-    model = models.OrderIngridients
-    form_class = forms.OrderIngridientsForm
-    pk_url_kwarg = "pk"
