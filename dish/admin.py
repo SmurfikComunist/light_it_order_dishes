@@ -56,6 +56,10 @@ class OrderAdminForm(forms.ModelForm):
         fields = "__all__"
 
 
+class OrderIngredientsInline(admin.TabularInline):
+    model = models.Order.ingredients.through
+
+
 class OrderAdmin(admin.ModelAdmin):
     form = OrderAdminForm
     list_display = [
@@ -66,6 +70,7 @@ class OrderAdmin(admin.ModelAdmin):
         "created",
         "last_updated",
     ]
+    inlines = [OrderIngredientsInline]
 
 
 admin.site.register(models.Ingredient, IngredientAdmin)
