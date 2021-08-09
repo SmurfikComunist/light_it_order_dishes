@@ -4,23 +4,6 @@ from django import forms
 from . import models
 
 
-class DishIngridientsAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = models.DishIngridients
-        fields = "__all__"
-
-
-class DishIngridientsAdmin(admin.ModelAdmin):
-    form = DishIngridientsAdminForm
-    list_display = [
-        "ingredients_amount",
-    ]
-    readonly_fields = [
-        "ingredients_amount",
-    ]
-
-
 class IngredientAdminForm(forms.ModelForm):
 
     class Meta:
@@ -82,25 +65,6 @@ class OrderAdmin(admin.ModelAdmin):
     ]
 
 
-class OrderIngridientsAdminForm(forms.ModelForm):
-
-    class Meta:
-        model = models.OrderIngridients
-        fields = "__all__"
-
-
-class OrderIngridientsAdmin(admin.ModelAdmin):
-    form = OrderIngridientsAdminForm
-    list_display = [
-        "ingredients_amount",
-    ]
-    readonly_fields = [
-        "ingredients_amount",
-    ]
-
-
-admin.site.register(models.DishIngridients, DishIngridientsAdmin)
 admin.site.register(models.Ingredient, IngredientAdmin)
 admin.site.register(models.Dish, DishAdmin)
 admin.site.register(models.Order, OrderAdmin)
-admin.site.register(models.OrderIngridients, OrderIngridientsAdmin)
