@@ -4,26 +4,20 @@
 {% block content %}
     
 <p>
-    <a class="btn btn-light" href="{% url 'dish_Dish_list' %}">
+    <a class="btn btn-light" href="{% url 'dish_list' %}">
     Dish Listing
     </a>
 </p>
     
 <form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.errors}}
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="created">created: </label>
-  <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="name">name: </label>
-  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
-  </div>
-  <div class="form-group row">
-  <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
-  <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
-  </div>
+    {% csrf_token %}
+    {{ form.errors }}
+    {{ form.as_p }}
+    {{ dish_ingredients_formset.management_form }}
+    {% for form in dish_ingredients_formset %}
+        <hr align="center" size="2"/>
+        {{ form.as_p }}
+    {% endfor %}
   <input type="submit" value="Save" class="btn btn-primary">
 </form>
 

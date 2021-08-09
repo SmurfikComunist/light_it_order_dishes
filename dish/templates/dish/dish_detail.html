@@ -3,17 +3,29 @@
 {% load static %}
 {% block content %}
     
-<p>
-    <a class="btn btn-light" href="{% url 'dish_Dish_list' %}">
-    Dish Listing
+<div>
+    <a class="btn btn-light" href="{% url 'dish_list' %}">
+        <h1>Dish Listing</h1>
     </a>
-</p>
-    
-<table class="table">
-    <tr><td>created</td><td>{{ object.created }}</td></tr>
-    <tr><td>name</td><td>{{ object.name }}</td></tr>
-    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
-</table>
+    <hr align="center" size="2"/>
+</div>
+
+<div>
+    <h3 class="title">{{ object.name }}</h3>
+    <div class="date">
+        Last updated: {{ object.last_updated }}
+    </div>
+    <br>
+    {% for element in object.dish_ingredients.all %}
+    <ul>
+        <li> {{element.ingredient.name}}: {{element.ingredients_amount}}</li>
+     </ul>
+    {% endfor %}
+</div>
+<br>
 <a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+<br>
+<hr align="center" size="2"/>
+<div><a class="btn btn-primary" href="{% url 'order_create' object.id %}">Create Order</a></div>
 
 {% endblock %}

@@ -3,17 +3,20 @@
 {% load static %}
 {% block content %}
     
-<p>
-    <a class="btn btn-light" href="{% url 'dish_Ingredient_list' %}">
-    Ingredient Listing
+<div>
+    <a class="btn btn-light" href="{% url 'ingredient_list' %}">
+        <h1>Ingredient Listing</h1>
     </a>
-</p>
-    
-<table class="table">
-    <tr><td>name</td><td>{{ object.name }}</td></tr>
-    <tr><td>created</td><td>{{ object.created }}</td></tr>
-    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
-</table>
+    <hr align="center" size="2"/>
+</div>
+
+<div>
+    <h3 class="title">{{ object.name }}</h3>
+    <div class="date">
+        Last updated: {{ object.last_updated }}
+    </div>
+</div>
+<br>
 <a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
 
 {% endblock %}
