@@ -7,7 +7,7 @@ from order_dishes.config import settings
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('dish/', include('dish.urls')),
+    path('order_dish/', include('dish.urls')),
     path('admin/', admin.site.urls),
 ]
 
