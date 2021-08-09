@@ -6,7 +6,11 @@ from django.urls import reverse
 class DishIngredients(models.Model):
 
     # Relationships
-    dish = models.ForeignKey("dish.Dish", on_delete=models.CASCADE)
+    dish = models.ForeignKey(
+        "dish.Dish",
+        on_delete=models.CASCADE,
+        related_name="dish_ingredients"
+    )
     ingredient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
 
     # Fields
