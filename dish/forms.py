@@ -41,3 +41,13 @@ class OrderForm(forms.ModelForm):
         ]
 
 
+OrderIngredientsFormset = inlineformset_factory(
+    parent_model=models.Order,
+    model=models.OrderIngredients,
+    fields=["ingredient", "ingredients_amount"],
+    labels={
+        "ingredient": "Ingredient name",
+        "amount": "Ingredient amount"
+    },
+    can_delete=False
+)
