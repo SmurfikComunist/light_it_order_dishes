@@ -1,9 +1,7 @@
 from django.views import generic
-from . import models
+
 from . import forms
-
-
-
+from . import models
 
 
 class IngredientListView(generic.ListView):

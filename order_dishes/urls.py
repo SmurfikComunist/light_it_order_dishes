@@ -1,6 +1,9 @@
 import debug_toolbar
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import (
+    path,
+    include,
+)
 from django.views.generic import TemplateView
 
 from order_dishes.config import settings
