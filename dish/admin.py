@@ -31,6 +31,10 @@ class DishAdminForm(forms.ModelForm):
         fields = "__all__"
 
 
+class DishIngredientsInline(admin.TabularInline):
+    model = models.Dish.ingredients.through
+
+
 class DishAdmin(admin.ModelAdmin):
     form = DishAdminForm
     list_display = [
@@ -42,6 +46,7 @@ class DishAdmin(admin.ModelAdmin):
         "created",
         "last_updated",
     ]
+    inlines = [DishIngredientsInline]
 
 
 class OrderAdminForm(forms.ModelForm):
