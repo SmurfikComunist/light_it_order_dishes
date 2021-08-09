@@ -98,7 +98,7 @@ class OrderIngredients(models.Model):
 
     # Relationships
     order = models.ForeignKey("dish.Order", on_delete=models.CASCADE)
-    ingridient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
+    ingredient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
 
     # Fields
     ingredients_amount = models.PositiveIntegerField(
