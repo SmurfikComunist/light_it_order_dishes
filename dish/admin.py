@@ -19,7 +19,6 @@ class IngredientAdmin(admin.ModelAdmin):
         "last_updated",
     ]
     readonly_fields = [
-        "name",
         "created",
         "last_updated",
     ]
@@ -41,7 +40,6 @@ class DishAdmin(admin.ModelAdmin):
     ]
     readonly_fields = [
         "created",
-        "name",
         "last_updated",
     ]
 
