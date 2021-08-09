@@ -16,7 +16,6 @@ class IngredientCreateView(generic.CreateView):
 
 class IngredientDetailView(generic.DetailView):
     model = models.Ingredient
-    form_class = forms.IngredientForm
 
 
 class IngredientUpdateView(generic.UpdateView):
@@ -27,7 +26,6 @@ class IngredientUpdateView(generic.UpdateView):
 
 class DishListView(generic.ListView):
     model = models.Dish
-    form_class = forms.DishForm
 
 
 class DishCreateView(generic.CreateView):
@@ -48,7 +46,6 @@ class DishUpdateView(generic.UpdateView):
 
 class OrderListView(generic.ListView):
     model = models.Order
-    form_class = forms.OrderForm
 
 
 class OrderCreateView(generic.CreateView):
@@ -58,7 +55,6 @@ class OrderCreateView(generic.CreateView):
 
 class OrderDetailView(generic.DetailView):
     model = models.Order
-    form_class = forms.OrderForm
 
 
 class OrderUpdateView(generic.UpdateView):
