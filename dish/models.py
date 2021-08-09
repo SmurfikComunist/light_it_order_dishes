@@ -97,7 +97,10 @@ class Order(models.Model):
 class OrderIngredients(models.Model):
 
     # Relationships
-    order = models.ForeignKey("dish.Order", on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        "dish.Order",
+        on_delete=models.CASCADE,
+        related_name="order_ingredients")
     ingredient = models.ForeignKey("dish.Ingredient", on_delete=models.CASCADE)
 
     # Fields
