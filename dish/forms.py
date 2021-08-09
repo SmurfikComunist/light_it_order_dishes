@@ -16,8 +16,7 @@ class DishForm(forms.ModelForm):
     class Meta:
         model = models.Dish
         fields = [
-            "name",
-            "ingridients",
+            "name"
         ]
 
 
@@ -25,8 +24,7 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = models.Order
         fields = [
-            "dish",
-            "ingredients",
+            "dish"
         ]
 
 
