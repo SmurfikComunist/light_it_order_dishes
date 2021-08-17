@@ -20,3 +20,19 @@
 В заказе может быть много ингредиентов,
 каждый ингредиент можно заказать в определенном
 количестве.
+
+## How to run
+1. Copy `.env` file from `/examples` folder to root folder:
+    ```
+    cp /examples/.env .env
+    ```
+2. Set following environment variables:
+   - SECRET_KEY
+3. Apply all migrations:
+    ```
+    python manage.py migrate
+    ```
+4. Run server:
+    ```
+    python manage.py runserver
+    ```
